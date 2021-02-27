@@ -1,7 +1,5 @@
 # Praxis final homework
 
-Foobar is a Python library for dealing with word pluralization.
-
 ## Selenium grid
 
 use docker compose to start selenium grid
