@@ -471,6 +471,6 @@ MigrationBackup/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudio
 
-# Allure
-allure-report
-allure-results
+# Mochawesome
+mochawesome-report
+mochawesome-reports
