@@ -7,9 +7,7 @@
     "clean": "rm -rf dist && rm -rf mochawesome-report && rm -rf mochawesome-reports",
     "build": "npm run clean && tsc",
     "test:api": "npm run build && mocha -t 5000 --reporter mochawesome --recursive dist/test/api/*.js",
-    "test:ui": "npm run build && protractor dist/protractor/local.config.js",
-    "report:generate": "allure generate allure-results --clean -o allure-report",
-    "report:open": "allure open allure-report"
+    "test:ui": "npm run build && protractor dist/protractor/local.config.js"
   },
   "author": "sebastian.villegasz@perficient.com",
   "license": "ISC",
