@@ -21,3 +21,24 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
     - run: npm ci
     - run: npm run test:api
+
+    
+  ui:
+    name: UI tests
+
+    runs-on: ubuntu-latest
+
+    env:
+      DEFAULT_BRANCH: master
+      NODE_VERSION: 14.x
+
+    steps:
+    - name: Checkout to branch ${{ env.DEFAULT_BRANCH }}
+      uses: actions/checkout@v2
+    - name: Use Node.js ${{ env.NODE_VERSION }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+    - run: npm ci
+    - run: docker-compose up -d
+    - run: npm run test:ui
