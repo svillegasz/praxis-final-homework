@@ -13,9 +13,9 @@ jobs:
 
     steps:
     - name: Checkout to branch ${{ DEFAULT_BRANCH }}
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
     - name: Use Node.js ${{ NODE_VERSION }}
-    - uses: actions/setup-node@v1
+      uses: actions/setup-node@v1
       with:
         node-version: ${{ NODE_VERSION }}
     - run: npm ci
