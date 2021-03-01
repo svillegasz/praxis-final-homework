@@ -1,0 +1,22 @@
+on:
+  schedule:
+  - cron : 0 0 * * *
+jobs:
+  api:
+    name: API tests
+
+    runs-on: ubuntu-latest
+
+    env:
+      DEFAULT_BRANCH: master
+      NODE_VERSION: 14.x
+
+    steps:
+    - name: Checkout to branch ${{ DEFAULT_BRANCH }}
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ NODE_VERSION }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ NODE_VERSION }}
+    - run: npm ci
+    - run: npm test:api
