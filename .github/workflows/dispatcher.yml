@@ -1,6 +1,8 @@
 on: workflow_dispatch
 jobs:
   dispatch:
+    name: Dispatcher
+    runs-on: ubuntu-latest
     steps:
     - name: Trigger end to end tests
       run: |
