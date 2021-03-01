@@ -30,7 +30,7 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
     - name: Upload reports to AWS bucket
       run: |
-        aws s3 sync ./mochawesome-reports ${{ secrets.AWS_BUCKET }}
+        aws s3 sync ./mochawesome-report ${{ secrets.AWS_BUCKET }}
     
   ui:
     name: UI tests
@@ -40,6 +40,7 @@ jobs:
     env:
       DEFAULT_BRANCH: master
       NODE_VERSION: 14.x
+      AWS_REGION: us-east-1
 
     steps:
     - name: Checkout to branch ${{ env.DEFAULT_BRANCH }}
