@@ -1,0 +1,13 @@
+on: workflow_dispatch
+jobs:
+  dispatch:
+    steps:
+    - name: Trigger end to end tests
+      run: |
+        curl --request POST \
+        --url https://api.github.com/repos/${{ github.repository }}/dispatches \
+        --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+        --header 'Accept: application/vnd.github.v3+json' \
+        --data '{
+          "event_type": "deployed"
+          }'
